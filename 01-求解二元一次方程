@@ -1,0 +1,36 @@
+public class Binary_linear_equation {
+    public void Solution(int Two_number, int One_number, int constant)  //二次项系数、一次项系数、常数项
+    {
+        // 二次项系数不能为0
+        if(Two_number == 0)
+        {
+            System.out.println("此方程不是二元一次方程！");
+        }
+        int delta = 0;
+
+        delta = One_number*One_number - 4*Two_number*constant;
+
+        if(delta < 0)
+        {
+            System.out.println("此二元一次方程无解！");
+        }
+        else if (delta == 0)
+        {
+            int result = 0;
+            result = (-1)*One_number / (2*Two_number);
+        }
+        else
+        {
+            double result1,result2;
+            result1 = ((-1)*One_number + Math.sqrt(delta)) / (2*Two_number);
+            result2 = ((-1)*One_number - Math.sqrt(delta)) / (2*Two_number);
+            System.out.println("第一个解为：" + result1);
+            System.out.println("第二个解为：" + result2);
+        }
+    }
+
+    public static void main(String[] args) {
+        Binary_linear_equation solution = new Binary_linear_equation();
+        solution.Solution(1, -1, -2);
+    }
+}
