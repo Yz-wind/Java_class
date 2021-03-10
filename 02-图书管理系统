@@ -1,0 +1,63 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/***
+ * 学生类 属性：姓名、性别、借书数量
+ * 图书管理员类 属性：姓名、存储图书的容器
+ * ***/
+
+public class Book_Manager {
+    public static class Student {
+        String name;    // 姓名
+        String gender;  // 性别
+        int book_number;    // 借书数量
+
+        public Student(String name, String gender, int book_number) {
+            this.name = name;
+            this.gender = gender;
+            this.book_number = book_number;
+        }
+    }
+
+    public static class Libraian{
+        String lname;   // 姓名
+        ArrayList<Integer> book;    // 存储图书的容器
+        public Libraian(String lname, ArrayList<Integer> book)
+        {
+            this.lname = lname;
+            this.book = new ArrayList<>();
+            for(int i = 0; i < 1000; i++)
+            {
+                this.book.add(0);
+            }
+        }
+
+        public void Borrow_books(Student student)
+        {
+            int number = student.book_number; // 借书数量
+            for(int i = 0; i < number; i++)
+            {
+                book.remove(0);
+            }
+            int remain_amount = book.size();
+            System.out.println("学生" + student.name +  "成功借" + number + "本书！");
+            System.out.println("剩余图书数量为:" + remain_amount);
+        }
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> arr_book = new ArrayList<>();
+        Libraian libraian = new Libraian("1号图书管理员", arr_book);
+        Student student1  = new Student("zzy", "男", 10);
+        Student student2  = new Student("Yp", "男", 20);
+        Student student3  = new Student("Hb", "男", 30);
+        Student student4  = new Student("Yjy", "男", 40);
+
+        libraian.Borrow_books(student1);
+        libraian.Borrow_books(student2);
+        libraian.Borrow_books(student3);
+        libraian.Borrow_books(student4);
+
+    }
+
+}
